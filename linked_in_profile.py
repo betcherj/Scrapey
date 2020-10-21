@@ -3,6 +3,8 @@ from selenium import webdriver
 import requests
 import random
 import time
+import re
+
 
 def set_viewport_size(driver, width, height):
     window_size = driver.execute_script("""
@@ -17,7 +19,7 @@ def get_driver(url, cookies):
                         "Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166")
     browser = webdriver.Firefox(prof)
 
-    set_viewport_size(browser, random.randint(600,800), random.randint(600,800))
+    set_viewport_size(browser, random.randint(1000,1200), random.randint(500,600))
 
 
     browser.implicitly_wait(5)
@@ -65,6 +67,14 @@ class LinkedInProfile():
             return False
         browser.close()
         return True
+
+    def add_user(self):
+        return None
+
+
+
+
+
 
 
 
